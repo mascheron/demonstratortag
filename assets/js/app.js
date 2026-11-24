@@ -32,6 +32,7 @@
       el.setAttribute('aria-hidden', k === i ? 'false' : 'true');
     });
     counter.textContent = (i + 1) + ' / ' + total;
+    if (i === 0) { showControls(5000); } else { clearTimeout(idleTimer); document.body.classList.add('idle'); }
     bar.style.width = ((i + 1) / total * 100) + '%';
     document.getElementById('prev').disabled = i === 0;
     document.getElementById('next').disabled = i === total - 1;
@@ -101,15 +102,20 @@
   document.getElementById('fs').addEventListener('click', function (e) { e.stopPropagation(); toggleFullscreen(); });
   controls.addEventListener('click', function (e) { e.stopPropagation(); });
 
-  /* Steuerleiste blendet sich bei Inaktivität aus */
-  function wake() {
+  /* Steuerleiste: nur kurz auf der ersten Folie, sonst ausgeblendet.
+     Wer mit der Maus unten in die Mitte fährt, sieht sie kurz wieder. */
+  function showControls(ms) {
     document.body.classList.remove('idle');
     clearTimeout(idleTimer);
-    idleTimer = setTimeout(function () { document.body.classList.add('idle'); }, 2500);
+    idleTimer = setTimeout(function () { document.body.classList.add('idle'); }, ms);
   }
-  ['mousemove', 'keydown', 'touchstart'].forEach(function (ev) {
-    window.addEventListener(ev, wake, { passive: true });
-  });
+  function wake() { showControls(current === 0 ? 5000 : 1800); }
+  window.addEventListener('mousemove', function (e) {
+    var nearBottom = e.clientY > window.innerHeight - 140;
+    var nearCenter = Math.abs(e.clientX - window.innerWidth / 2) < 260;
+    if (nearBottom && nearCenter) showControls(1800);
+  }, { passive: true });
+  window.addEventListener('touchstart', function () { showControls(1800); }, { passive: true });
   wake();
 
   function onFsChange() {
