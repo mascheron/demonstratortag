@@ -81,6 +81,11 @@
     if (e.clientX < rect.left + rect.width * 0.25) prev(); else next();
   });
 
+  /* Links öffnen, ohne weiterzublättern */
+  Array.prototype.forEach.call(document.querySelectorAll('a'), function (a) {
+    a.addEventListener('click', function (e) { e.stopPropagation(); });
+  });
+
   /* Wischen auf Touch-Geräten */
   var touchX = null;
   deck.addEventListener('touchstart', function (e) { touchX = e.touches[0].clientX; }, { passive: true });
