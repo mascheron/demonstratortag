@@ -230,3 +230,13 @@ a.link-card,a.big-link,a.video,a.shot,a.press{cursor:pointer}
 @keyframes beamin{from{opacity:0}to{opacity:1}}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+
+/* Wartefolien zur Programmankündigung (Optik der Titelfolie) */
+.wait{background:#FFFFFF}
+.wait .cover-photo{left:90px;top:70px;width:636px;height:900px}
+.wait-text{position:absolute;left:820px;top:260px;width:1000px}
+.wait-text .eyebrow{font-size:30px;margin-bottom:24px}
+.wait-time{margin:0 0 28px;font-size:130px;line-height:1;font-weight:800;color:var(--cyan-d);letter-spacing:-.02em}
+.wait-topic{margin:0 0 36px;font-size:60px;line-height:1.15;font-weight:700;color:var(--navy);max-width:1000px}
+.wait-speaker{font-size:36px;color:var(--grey);font-weight:500}
+.wait-footer{left:820px;width:1000px;bottom:56px}
