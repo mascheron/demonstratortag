@@ -304,7 +304,7 @@ a.link-card,a.big-link,a.video,a.shot,a.press{cursor:pointer}
 .danke-logos img.bsrm{height:96px}
 .danke .cover-band{background:var(--slate)}
 
-/* Download-Buttons auf der Dankesfolie */
+/* Download-Buttons auf der Dankesfolie: dezent in hellblau (20 %) */
 .dl-buttons{display:flex;gap:28px;margin-top:56px}
-.dl-btn{display:inline-block;background:var(--navy);color:#fff;font-size:26px;font-weight:600;padding:20px 40px;border-radius:999px;text-decoration:none}
-.dl-btn:hover,.dl-btn:focus-visible{background:var(--cyan-d);outline:none}
+.dl-btn{display:inline-block;background:rgba(22,184,212,.2);color:var(--cyan-d);font-size:24px;font-weight:600;padding:18px 36px;border-radius:999px;text-decoration:none}
+.dl-btn:hover,.dl-btn:focus-visible{background:rgba(22,184,212,.35);outline:none}
