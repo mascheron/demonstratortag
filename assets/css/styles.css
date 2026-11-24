@@ -278,3 +278,9 @@ a.link-card,a.big-link,a.video,a.shot,a.press{cursor:pointer}
 .hc-li p{font-size:22px;line-height:1.35;color:var(--grey)}
 .hc-n{display:inline-flex;width:34px;height:34px;flex:none;border-radius:50%;background:var(--cyan-d);color:#fff;font-size:19px;align-items:center;justify-content:center}
 .slide.is-active .hc-li{animation:rise .8s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--dd)}
+
+/* Marketing-Übersicht: Titel mit fester Höhe (zwei Zeilen), Beschreibungen auf einer Linie */
+.links-grid .link-card{display:flex;flex-direction:column;gap:0;min-height:250px}
+.links-grid .link-card strong{display:block;min-height:2.4em;line-height:1.2;margin:14px 0 10px}
+.links-grid .link-card span:not(.lk){display:block}
+.links-grid .link-card .lk{align-self:flex-start}
