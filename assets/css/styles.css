@@ -210,3 +210,14 @@ a.link-card,a.big-link,a.video,a.shot,a.press{cursor:pointer}
 
 /* Logo oben rechts auf jeder Folie (dezent, freigestellt) */
 .corner-logo{position:absolute;top:44px;right:128px;width:200px;height:auto;opacity:.92;z-index:2;pointer-events:none}
+
+/* Newsletter-Folie */
+.news-wrap{display:flex;gap:64px;align-items:flex-start}
+.news-preview{display:block;flex:none;width:520px;height:640px;overflow:hidden;border-radius:16px;box-shadow:0 14px 36px rgba(11,36,64,.2);background:#fff}
+.news-preview img{width:520px;height:640px;object-fit:cover;object-position:top;display:block}
+.news-text{padding-top:20px}
+.news-text h3{font-size:44px;margin-bottom:24px}
+.news-text p{font-size:28px;line-height:1.5;margin-bottom:24px}
+.news-meta{color:var(--navy)!important}
+.news-btn{display:inline-block;margin-top:12px;background:var(--navy);color:#fff;font-size:26px;font-weight:600;padding:20px 40px;border-radius:999px;text-decoration:none}
+.news-btn:hover{background:var(--cyan-d)}
