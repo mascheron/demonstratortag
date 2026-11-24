@@ -66,7 +66,7 @@ p{margin:0;font-size:28px;line-height:1.5;color:var(--grey)}
 .agenda p{font-size:26px}
 
 /* Titelfolie Rückblick */
-.cover-dark{padding:128px 180px}
+.cover-dark{padding:128px 180px;background:#FFFFFF}
 .dark-logo{position:absolute;right:160px;top:160px}
 .dark-logo img{width:560px;height:auto}
 .dark-text{position:absolute;left:180px;top:380px;width:1400px}
