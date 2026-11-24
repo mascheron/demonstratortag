@@ -32,13 +32,13 @@ p{margin:0;font-size:28px;line-height:1.5;color:var(--grey)}
 .stripes span{flex:1;background:var(--cyan);transform-origin:left;transform:scaleX(0)}
 .stripes span:nth-child(2){background:var(--orange)}
 .stripes span:nth-child(3){background:var(--blue)}
-.cover-photo{opacity:0;position:absolute;left:80px;top:110px;width:440px;height:830px;background:var(--slate);overflow:hidden;box-shadow:0 20px 50px rgba(11,36,64,.18)}
+.cover-photo{opacity:0;position:absolute;left:90px;top:70px;width:636px;height:900px;background:var(--slate);overflow:hidden;box-shadow:0 20px 50px rgba(11,36,64,.18)}
 .cover-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .cover-logos{position:absolute;right:120px;top:100px;display:flex;align-items:center;gap:56px}
 .cover-logos img{height:72px;width:auto}
 .cover-logos img[src$=".svg"]{height:64px}
-.cover-title{position:absolute;left:640px;top:330px;width:1100px}
-.cover-title h1{margin:0;font-size:80px;line-height:1.12;font-weight:500;letter-spacing:.01em;text-transform:uppercase;color:#465359}
+.cover-title{position:absolute;left:820px;top:330px;width:1000px}
+.cover-title h1{margin:0;font-size:72px;line-height:1.12;font-weight:500;letter-spacing:.01em;text-transform:uppercase;color:#465359}
 .cover-bsrm{display:block;margin-top:110px;width:720px;height:auto}
 .cover-band{position:absolute;left:0;right:0;bottom:0;height:96px;background:var(--slate);display:flex;align-items:center;justify-content:flex-end;padding-right:128px}
 .cover-band span{color:var(--white);font-size:30px;font-weight:500}
@@ -221,3 +221,12 @@ a.link-card,a.big-link,a.video,a.shot,a.press{cursor:pointer}
 .news-meta{color:var(--navy)!important}
 .news-btn{display:inline-block;margin-top:12px;background:var(--navy);color:#fff;font-size:26px;font-weight:600;padding:20px 40px;border-radius:999px;text-decoration:none}
 .news-btn:hover{background:var(--cyan-d)}
+
+/* Key Visual: kreisender Lichtstrahl des Leuchtturms (Lampe ca. x 422px, y 385px auf der Folie) */
+.beam{position:absolute;left:-1793px;top:-1829px;width:4400px;height:4400px;border-radius:50%;pointer-events:none;z-index:3;opacity:0;background:conic-gradient(from 0deg, rgba(255,246,200,0) 0deg, rgba(255,246,200,.55) 5deg, rgba(255,246,200,.8) 7deg, rgba(255,246,200,.55) 9deg, rgba(255,246,200,0) 15deg, rgba(255,246,200,0) 360deg);mix-blend-mode:screen}
+.lamp-glow{position:absolute;left:317px;top:281px;width:180px;height:180px;border-radius:50%;pointer-events:none;z-index:4;opacity:0;background:radial-gradient(circle, rgba(255,250,220,.95) 0%, rgba(255,240,180,.5) 30%, rgba(255,240,180,0) 70%)}
+.cover.is-active .beam{animation:beamin 1.2s ease 1.6s both, spin 9s linear 1.6s infinite}
+.cover.is-active .lamp-glow{animation:beamin 1.2s ease 1.6s both, pulse 2.4s ease-in-out 2.8s infinite}
+@keyframes beamin{from{opacity:0}to{opacity:1}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
